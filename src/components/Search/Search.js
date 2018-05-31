@@ -25,7 +25,7 @@ class Search extends Component {
 							Search for a Package
 						</label>
 						<Input
-							medium
+							medium="true"
 							className="input"
 							id="packageName"
 							onChange={this.handleChange}
