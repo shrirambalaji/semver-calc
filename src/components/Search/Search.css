@@ -9,7 +9,6 @@ input[type="phone"] {
     border-radius: 2px;
     border: 1px solid #d3dce7;
     color: #2b303b;
-    height: 40px;
     line-height: 2em;
     padding: 4px 20px;
     -webkit-transition: border 200ms ease-in-out;
@@ -19,9 +18,12 @@ input[type="phone"] {
     -moz-appearance: none !important;
     appearance: none !important;
     -webkit-appearance: none !important;
-    margin-top: 10px;
 }
 
 #packageNameLabel {
     margin-top: 10px;
+}
+
+#submitButton {
+    border-radius: 2px !important;
 }
