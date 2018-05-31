@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'HK Grotesk';
+    font-style:  normal;
+    font-weight: 700;
+    src: url("HKGrotesk-SemiBold.woff2") format("woff2"),
+         url("HKGrotesk-SemiBold.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: 'HK Grotesk';
+    font-style:  normal;
+    font-weight: 900;
+    src: url("HKGrotesk-Bold.woff2") format("woff2"),
+         url("HKGrotesk-Bold.woff") format("woff");
+  }
