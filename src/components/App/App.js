@@ -3,9 +3,16 @@ import logo from "../../assets/images/logo.svg";
 import "../../assets/fonts/hk-grotesk/hk-grotesk.css";
 import Search from "../Search/Search";
 import { Container, HeroBody, Hero, Title } from "bloomer";
+import { getPackages } from "../../api";
 import "./App.css";
 
 class App extends Component {
+	handleSearch = name => {
+		getPackages(name).then(packages => {
+			console.log(packages);
+		});
+	};
+
 	render() {
 		return (
 			<div>
@@ -22,7 +29,7 @@ class App extends Component {
 					</HeroBody>
 				</Hero>
 				<Container className="is-centered">
-					<Search />
+					<Search search={this.handleSearch} />
 				</Container>
 			</div>
 		);

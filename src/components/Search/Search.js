@@ -23,6 +23,7 @@ class Search extends Component {
 
 	handleClick = e => {
 		e.preventDefault();
+		this.props.search(this.state.packageName);
 	};
 
 	render() {
@@ -35,10 +36,14 @@ class Search extends Component {
 							<FieldBody>
 								<Field isGrouped>
 									<Control isExpanded>
-										<Input placeholder="Search for an npm package" id="packageName" />
+										<Input
+											placeholder="Search for an npm package"
+											id="packageName"
+											onChange={this.handleChange}
+										/>
 									</Control>
 								</Field>
-								<Button id="submitButton" isColor="success" isOutlined>
+								<Button id="submitButton" isColor="success" isOutlined onClick={this.handleClick}>
 									Submit
 								</Button>
 							</FieldBody>
