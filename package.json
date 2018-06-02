@@ -5,9 +5,11 @@
   "dependencies": {
     "bloomer": "^0.6.3",
     "bulma": "^0.7.1",
+    "card-vibes": "0.0.3",
     "flow-bin": "^0.73.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-markdown": "^3.3.2",
     "react-scripts": "0.9.5"
   },
   "devDependencies": {},

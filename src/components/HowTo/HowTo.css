@@ -1,0 +1,27 @@
+
+
+.HowTo-box {
+    width: 300px !important;
+    /* padding: 30px; */
+    margin: 0 auto;
+    background: rgb(158, 76, 76);
+    border-radius: 4px !important;
+    color: rgb(54, 73, 98);
+    font-size: 16px;
+    line-height: 1.6;
+    box-shadow: rgba(20, 26, 40, 0.1) 0px 7px 42px !important;
+    will-change: transform;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+    min-height: 250px;
+}
+
+.Example-container {
+    padding: 20px;
+    margin-top: 10px;
+    background: #fafafa;
+}
+
+#examplesList {
+    list-style: initial;
+    list-style-position: inside;
+}
