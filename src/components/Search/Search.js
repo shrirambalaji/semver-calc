@@ -29,7 +29,7 @@ class Search extends Component {
 	render() {
 		const { packageName } = this.state;
 		return (
-			<Container className="margin-top-100">
+			<Container>
 				<Columns isCentered>
 					<Column isSize="1/2">
 						<Field isHorizontal>
