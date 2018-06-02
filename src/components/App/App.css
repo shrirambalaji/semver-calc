@@ -31,6 +31,12 @@
   font-size: large;
 }
 
+#howToContainer {
+  margin-top: 100px;
+  padding-bottom: 50px !important;
+  background: aliceblue;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

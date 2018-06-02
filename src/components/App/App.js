@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import logo from "../../assets/images/logo.svg";
+// import logo from "../../assets/images/logo.svg";
 import "../../assets/fonts/hk-grotesk/hk-grotesk.css";
 import Search from "../Search/Search";
+import HowTo from "../HowTo/HowTo";
+import content from "../../_static__/how-to.json";
 import { Container, HeroBody, Hero, Title } from "bloomer";
 import "./App.css";
 
@@ -21,9 +23,14 @@ class App extends Component {
 						</Container>
 					</HeroBody>
 				</Hero>
-				<Container className="is-centered">
+				<Container>
 					<Search />
 				</Container>
+				<div id="howToContainer" className="is-centered">
+					<Container isFluid>
+						<HowTo content={content["howTo"]} />
+					</Container>
+				</div>
 			</div>
 		);
 	}
