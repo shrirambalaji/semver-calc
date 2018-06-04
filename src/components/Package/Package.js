@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { Columns, Column, Field, FieldBody, Input } from "bloomer";
 import PropTypes from "prop-types";
-import "./Package.css";
 import { Control } from "bloomer/lib/elements/Form/Control";
+import "./Package.css";
+import matcher from "../../utils";
 
 class Package extends Component {
 	static getDerivedStateFromProps = nextProps => {
@@ -15,7 +16,8 @@ class Package extends Component {
 
 	handleChange = e => {
 		e.preventDefault();
-		const { versions } = this.state;
+		const newVersions = matcher(e.target.value, this.state.versions);
+		this.setState({ versions: newVersions });
 	};
 
 	render() {
@@ -38,28 +40,36 @@ class Package extends Component {
 					<Column isSize="1/4">
 						{versions.slice(0, cutoff).map(version => (
 							<p key={version.version}>
-								<code>{version.version}</code>
+								<code className={version.classes !== null ? version.classes : ""}>
+									{version.version}
+								</code>
 							</p>
 						))}
 					</Column>
 					<Column isSize="1/4">
 						{versions.slice(cutoff, cutoff * 2).map(version => (
 							<p key={version.version}>
-								<code>{version.version}</code>
+								<code className={version.classes !== null ? version.classes : ""}>
+									{version.version}
+								</code>
 							</p>
 						))}
 					</Column>
 					<Column isSize="1/4">
 						{versions.slice(cutoff * 2, cutoff * 3).map(version => (
 							<p key={version.version}>
-								<code>{version.version}</code>
+								<code className={version.classes !== null ? version.classes : ""}>
+									{version.version}
+								</code>
 							</p>
 						))}
 					</Column>
 					<Column isSize="1/4">
 						{versions.slice(cutoff * 3).map(version => (
 							<p key={version.version}>
-								<code>{version.version}</code>
+								<code className={version.classes !== null ? version.classes : ""}>
+									{version.version}
+								</code>
 							</p>
 						))}
 					</Column>
@@ -74,7 +84,12 @@ PropTypes.defaultProps = {
 };
 
 Package.propTypes = {
-	versions: PropTypes.arrayOf(PropTypes.string).isRequired
+	versions: PropTypes.arrayOf(
+		PropTypes.shape({
+			version: PropTypes.string.isRequired,
+			classes: PropTypes.oneOf([PropTypes.string, null])
+		})
+	)
 };
 
 export default Package;

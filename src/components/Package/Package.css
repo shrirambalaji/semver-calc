@@ -2,4 +2,11 @@
 	display: inline-block;
 	margin: 0.5em 0em;
 	color: grey;
+	transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+.versions-columns p > code.matched {
+	background-color: #31d431;
+	color: #ffffff;
+	transition: background-color 0.2s ease-out, color 0.2s ease-out;
 }
