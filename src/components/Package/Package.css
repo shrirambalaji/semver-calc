@@ -1,0 +1,5 @@
+.versions-columns p > code {
+	display: inline-block;
+	margin: 0.5em 0em;
+	color: grey;
+}

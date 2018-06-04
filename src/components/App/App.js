@@ -9,17 +9,24 @@ import "./App.css";
 
 class App extends Component {
 	state = {
-		packages: undefined
+		packages: undefined,
+		versions: []
 	};
 
 	handleSearch = name => {
 		getPackages(name).then(packages => {
-			this.setState({ packages });
+			const versions = Object.keys(packages.versions).map(version => {
+				return {
+					version,
+					classes: null
+				};
+			});
+			this.setState({ versions, packages });
 		});
 	};
 
 	render() {
-		const { packages } = this.state;
+		const { packages, versions } = this.state;
 		return (
 			<div>
 				<Hero isColor="info" isSize="small" className="App-header">
@@ -44,7 +51,7 @@ class App extends Component {
 					<Search search={this.handleSearch} />
 					{packages && (
 						<Container>
-							<Package versions={Object.keys(packages.versions)} />
+							<Package versions={versions} />
 						</Container>
 					)}
 				</Container>
