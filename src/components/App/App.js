@@ -15,18 +15,19 @@ class App extends Component {
 
 	handleSearch = name => {
 		getPackages(name).then(packages => {
+			const distTags = packages["dist-tags"];
 			const versions = Object.keys(packages.versions).map(version => {
 				return {
 					version,
 					classes: null
 				};
 			});
-			this.setState({ versions, packages });
+			this.setState({ versions, packages, distTags });
 		});
 	};
 
 	render() {
-		const { packages, versions } = this.state;
+		const { packages, versions, distTags } = this.state;
 		return (
 			<div>
 				<Hero isColor="info" isSize="small" className="App-header">
@@ -51,7 +52,7 @@ class App extends Component {
 					<Search search={this.handleSearch} />
 					{packages && (
 						<Container>
-							<Package versions={versions} />
+							<Package versions={versions} distTags={distTags} />
 						</Container>
 					)}
 				</Container>

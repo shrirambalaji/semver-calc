@@ -9,7 +9,8 @@
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "semver": "^5.5.0"
   },
   "devDependencies": {},
   "scripts": {

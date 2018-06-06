@@ -16,7 +16,13 @@ class Package extends Component {
 
 	handleChange = e => {
 		e.preventDefault();
-		const newVersions = matcher(e.target.value, this.state.versions);
+		const newVersions = matcher(
+			e.target.value,
+			this.state.versions,
+			this.props.distTags.latest,
+			this.props.distTags
+		);
+		console.log(newVersions);
 		this.setState({ versions: newVersions });
 	};
 

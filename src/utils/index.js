@@ -1,7 +1,11 @@
-const matcher = (versionNo, versions) => {
+import semver from "semver";
+const matcher = (versionNo, versions, latest, distTags) => {
 	const tempVersions = [];
 	versions.forEach(v => {
-		if (v.version === versionNo) {
+		const isSatisfied =
+			distTags[versionNo] === v.version ||
+			(semver.satisfies(v.version, versionNo) && (!latest || semver.lte(v.version, latest)));
+		if (isSatisfied) {
 			v.classes = "matched";
 		} else {
 			v.classes = null;
