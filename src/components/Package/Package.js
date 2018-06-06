@@ -7,7 +7,9 @@ import matcher from "../../utils";
 
 class Package extends Component {
 	static getDerivedStateFromProps = nextProps => {
-		return null;
+		return {
+			versions: nextProps.versions
+		};
 	};
 
 	state = {
@@ -22,7 +24,6 @@ class Package extends Component {
 			this.props.distTags.latest,
 			this.props.distTags
 		);
-		console.log(newVersions);
 		this.setState({ versions: newVersions });
 	};
 

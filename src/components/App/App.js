@@ -28,6 +28,7 @@ class App extends Component {
 
 	render() {
 		const { packages, versions, distTags } = this.state;
+		console.log(versions);
 		return (
 			<div>
 				<Hero isColor="info" isSize="small" className="App-header">
