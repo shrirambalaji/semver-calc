@@ -38,9 +38,7 @@ class Package extends Component {
 
 		return (
 			<div isCentered>
-				<ul isCentered id="versions">
-					{packageVersions}
-				</ul>
+				<ul id="versions">{packageVersions}</ul>
 			</div>
 		);
 	}

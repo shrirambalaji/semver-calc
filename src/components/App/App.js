@@ -7,30 +7,43 @@ import HowTo from "../HowTo/HowTo";
 import content from "../../__static__/how-to.json";
 import { Container, HeroBody, Hero, Title } from "bloomer";
 import { getPackages } from "../../api";
+import classnames from "classnames";
 import "./App.css";
 
 class App extends Component {
 	state = {
 		packages: undefined,
-		versions: []
+		versions: [],
+		isLoading: false
+	};
+
+	handleLoading = loading => {
+		console.log(">>>-SHRIRAM->>> loading", loading);
+		this.setState({ isLoading: loading });
 	};
 
 	handleSearch = name => {
-		getPackages(name).then(packages => {
-			const distTags = packages["dist-tags"];
-			const versions = Object.keys(packages.versions).map(version => {
-				return {
-					version,
-					classes: null
-				};
+		getPackages(name)
+			.then(packages => {
+				const distTags = packages["dist-tags"];
+				const versions = Object.keys(packages.versions).map(version => {
+					return {
+						version,
+						classes: null
+					};
+				});
+				this.setState({ versions, packages, distTags });
+			})
+			.then(() => {
+				this.setState({ isLoading: false });
 			});
-			this.setState({ versions, packages, distTags });
-		});
 	};
 
 	render() {
-		const { packages, versions, distTags } = this.state;
-		console.log(versions);
+		const { packages, versions, distTags, isLoading } = this.state;
+		const loadingClass = classnames({
+			"is-loading": this.state.isLoading
+		});
 		return (
 			<div>
 				<Hero isColor="info" isSize="small" className="App-header">
@@ -52,7 +65,11 @@ class App extends Component {
 							&nbsp;here
 						</a>
 					</Title>
-					<Search search={this.handleSearch} />
+					<Search
+						search={this.handleSearch}
+						startLoading={this.handleLoading}
+						loadingClass={loadingClass}
+					/>
 					{packages && (
 						<Container>
 							<Package versions={versions} distTags={distTags} />

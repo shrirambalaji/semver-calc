@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container, Columns, Column, Field, FieldBody, Control, Input, Button } from "bloomer";
+import classnames from "classnames";
 import "./Search.css";
 
 class Search extends Component {
@@ -14,10 +15,10 @@ class Search extends Component {
 	handleClick = e => {
 		e.preventDefault();
 		this.props.search(this.state.packageName);
+		this.props.startLoading(true);
 	};
 
 	render() {
-		const { packageName } = this.state;
 		return (
 			<Container>
 				<Columns isCentered>
@@ -33,7 +34,12 @@ class Search extends Component {
 										/>
 									</Control>
 								</Field>
-								<Button id="submitButton" isColor="success" isOutlined onClick={this.handleClick}>
+								<Button
+									id="submitButton"
+									isColor="success"
+									className={this.props.loadingClass}
+									onClick={this.handleClick}
+								>
 									Submit
 								</Button>
 							</FieldBody>
