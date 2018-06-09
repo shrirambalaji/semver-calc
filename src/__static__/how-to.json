@@ -1,0 +1,40 @@
+{
+    "howTo": [
+        {
+            "heading": "include everything greater than a particular version in the same major range",
+            "description": "use the carat (aka hat) symbol, `^` ",
+            "examples": ["^2.2.1"],
+            "notes": ""
+        },
+        {
+            "heading": "specify a range of stable versions",
+            "description": "use `>`, `<`, `=`, `>=` or `<=` for comparisons, or `-` to specify an inclusive range",
+            "examples": [">2.1", "1.0.0 - 1.2.0"],
+            "notes": "there must be spaces on either side of hyphens"         
+        },
+        {
+            "heading": "specify a range of prerelease versions",
+            "description": "use comparisons like `>` with a prerelease tag",
+            "examples": [">1.0.0-alpha"," >=1.0.0-rc.0 <1.0.1"],
+            "notes": ""
+        },
+        {
+            "heading": "include everything greater than a particular version in the same minor range" ,
+            "description": "use the tilde symbol, `~` ",
+            "examples": ["~2.2.0"],
+            "notes":""
+        },
+        {
+            "heading": "include prerelease versions like alpha and beta",
+            "description": "use the prerelease tag",
+            "examples": ["1.0.0-rc.1"],
+            "notes": "prerelease versions are specified as exact versions."
+        },
+        {
+            "heading": "include multiple sets of versions",
+            "description": "use `||` to combine",
+            "examples": ["^2 <2.2 || > 2.3"],
+            "notes": ""
+        }
+    ]
+}
