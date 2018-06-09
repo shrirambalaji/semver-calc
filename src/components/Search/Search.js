@@ -1,15 +1,5 @@
 import React, { Component } from "react";
-import {
-	Container,
-	Columns,
-	Column,
-	Field,
-	FieldBody,
-	Label,
-	Control,
-	Input,
-	Button
-} from "bloomer";
+import { Container, Columns, Column, Field, FieldBody, Control, Input, Button } from "bloomer";
 import "./Search.css";
 
 class Search extends Component {
