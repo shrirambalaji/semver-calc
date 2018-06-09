@@ -27,9 +27,26 @@ class Package extends Component {
 		this.setState({ versions: newVersions });
 	};
 
+	renderPackageVersions(versions) {
+		let packageVersions = versions.map(version => {
+			return (
+				<li key={version.version}>
+					<code className={version.classes !== null ? version.classes : ""}>{version.version}</code>
+				</li>
+			);
+		});
+
+		return (
+			<div isCentered>
+				<ul isCentered id="versions">
+					{packageVersions}
+				</ul>
+			</div>
+		);
+	}
+
 	render() {
 		const { versions } = this.state;
-		const cutoff = Math.floor(versions.length / 4);
 		return (
 			<Fragment>
 				<Columns isCentered>
@@ -43,43 +60,8 @@ class Package extends Component {
 						</Field>
 					</Column>
 				</Columns>
-				<Columns isCentered className="versions-columns">
-					<Column isSize="1/4">
-						{versions.slice(0, cutoff).map(version => (
-							<p key={version.version}>
-								<code className={version.classes !== null ? version.classes : ""}>
-									{version.version}
-								</code>
-							</p>
-						))}
-					</Column>
-					<Column isSize="1/4">
-						{versions.slice(cutoff, cutoff * 2).map(version => (
-							<p key={version.version}>
-								<code className={version.classes !== null ? version.classes : ""}>
-									{version.version}
-								</code>
-							</p>
-						))}
-					</Column>
-					<Column isSize="1/4">
-						{versions.slice(cutoff * 2, cutoff * 3).map(version => (
-							<p key={version.version}>
-								<code className={version.classes !== null ? version.classes : ""}>
-									{version.version}
-								</code>
-							</p>
-						))}
-					</Column>
-					<Column isSize="1/4">
-						{versions.slice(cutoff * 3).map(version => (
-							<p key={version.version}>
-								<code className={version.classes !== null ? version.classes : ""}>
-									{version.version}
-								</code>
-							</p>
-						))}
-					</Column>
+				<Columns isCentered isSize={12} className="versions-columns" isMultiline>
+					{this.renderPackageVersions(versions)}
 				</Columns>
 			</Fragment>
 		);
