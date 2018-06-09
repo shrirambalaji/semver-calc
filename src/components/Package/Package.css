@@ -1,0 +1,35 @@
+.versions-columns ul {
+  width: 70%;
+  margin: auto;
+}
+
+.versions-columns li > code {
+	display: inline-block;
+	margin: 0.5em 0em;
+	color: grey;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  border-radius: 2px;
+  font-size: 12px;
+  width: 70px;
+  text-align: center;
+  padding: 5px;
+}
+
+.versions-columns li > code.matched {
+	background-color: #31d431;
+	color: #ffffff;
+	transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+#versions {
+  /* -webkit-columns: 30 60px;
+  -moz-columns: 30 60px;
+  columns: 30 60px;
+  -webkit-column-gap: 1em;
+  -moz-column-gap: 1em;
+  column-gap: 1em;
+  text-align: center; */
+  columns: 30 75px;
+  column-gap: 1.0em;
+  text-align: center;
+}
