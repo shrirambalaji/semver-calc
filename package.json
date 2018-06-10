@@ -1,5 +1,5 @@
 {
-  "name": "semver-cal",
+  "name": "semver-calc",
   "version": "1.1.0",
   "private": true,
   "dependencies": {
@@ -14,6 +14,9 @@
     "react-scripts": "0.9.5",
     "react-select": "^1.2.1",
     "semver": "^5.5.0"
+  },
+  "author": {
+    "name": "Shriram Balaji, Tarang Hirani"
   },
   "devDependencies": {},
   "scripts": {
