@@ -1,4 +1,4 @@
-# semver-cal
+# semver-calc
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FShriram-Balaji%2Fsemver-cal.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FShriram-Balaji%2Fsemver-cal?ref=badge_shield)
 
