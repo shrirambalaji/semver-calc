@@ -1,25 +1,3 @@
-input[type="text"], 
-input[type="email"], 
-input[type="password"], 
-input[type="url"], 
-input[type="search"], 
-input[type="phone"] {
-    background: transparent;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    border: 1px solid #d3dce7;
-    color: #2b303b;
-    line-height: 2em;
-    padding: 4px 20px;
-    -webkit-transition: border 200ms ease-in-out;
-    -o-transition: border 200ms ease-in-out;
-    transition: border 200ms ease-in-out;
-    text-transform: none;
-    -moz-appearance: none !important;
-    appearance: none !important;
-    -webkit-appearance: none !important;
-}
-
 #packageNameLabel {
     margin-top: 10px;
 }
