@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Container, Columns, Column, Field, FieldBody, Control, Input, Button } from "bloomer";
-import classnames from "classnames";
+import { Container, Columns, Column, Field, FieldBody, Control, Button } from "bloomer";
 import Select from "react-select";
 import "react-select/dist/react-select.css";
 import "./Search.css";
@@ -24,27 +23,46 @@ class Search extends Component {
 			.then(json => {
 				json.results.map(item => {
 					packages.push(item.package);
-				});
+					return packages;
+				}, {});
 				return { options: packages };
 			});
 	}
+
+	onInputKeyDown = event => {
+		switch (event.keyCode) {
+			case 13:
+				let packageName = this.state.value.name;
+				if (!packageName) packageName = "";
+				this.props.search(name);
+				this.props.startLoading(true);
+				event.preventDefault();
+				break;
+
+			default:
+				break;
+		}
+	};
 
 	onChange = value => {
 		this.setState({
 			value: value
 		});
+		this.props.clearVersions();
 	};
 
 	handleClick = e => {
 		e.preventDefault();
-		this.props.search(this.state.value.name);
+		let packageName = this.state.value.name;
+		if (!packageName) packageName = "";
+		this.props.search(packageName);
 		this.props.startLoading(true);
 	};
 
 	render() {
 		const AsyncSearch = Select.Async;
 		return (
-			<Container>
+			<Container id="searchContainer">
 				<Columns isCentered>
 					<Column isSize="1/2">
 						<Field isHorizontal>
@@ -58,6 +76,7 @@ class Search extends Component {
 											onChange={this.onChange}
 											placeholder="Search for an npm package"
 											loadOptions={this.getPackageNames}
+											onInputKeyDown={this.onInputKeyDown}
 											labelKey="name"
 										/>
 									</Control>

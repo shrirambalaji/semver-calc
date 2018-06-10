@@ -52,13 +52,13 @@ class Package extends Component {
 						<Field isHorizontal>
 							<FieldBody>
 								<Control>
-									<Input placeholder="Search for a version" onChange={this.handleChange} />
+									<Input placeholder="Enter version number" onChange={this.handleChange} />
 								</Control>
 							</FieldBody>
 						</Field>
 					</Column>
 				</Columns>
-				<Columns isCentered className="versions-columns" isMultiline>
+				<Columns id="versionContainer" isCentered className="versions-columns" isMultiline>
 					{this.renderPackageVersions(versions)}
 				</Columns>
 			</Fragment>

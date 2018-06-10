@@ -18,8 +18,11 @@ class App extends Component {
 	};
 
 	handleLoading = loading => {
-		console.log(">>>-SHRIRAM->>> loading", loading);
 		this.setState({ isLoading: loading });
+	};
+
+	clearVersions = () => {
+		this.setState({ versions: [] });
 	};
 
 	handleSearch = name => {
@@ -40,7 +43,7 @@ class App extends Component {
 	};
 
 	render() {
-		const { packages, versions, distTags, isLoading } = this.state;
+		const { packages, versions, distTags } = this.state;
 		const loadingClass = classnames({
 			"is-loading": this.state.isLoading
 		});
@@ -69,6 +72,7 @@ class App extends Component {
 						search={this.handleSearch}
 						startLoading={this.handleLoading}
 						loadingClass={loadingClass}
+						clearVersions={this.clearVersions}
 					/>
 					{packages && (
 						<Container>
