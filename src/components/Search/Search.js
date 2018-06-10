@@ -37,7 +37,6 @@ class Search extends Component {
 
 	handleClick = e => {
 		e.preventDefault();
-		console.log(">>>-SHRIRAM->>> this.state.value", this.state.value);
 		this.props.search(this.state.value.name);
 		this.props.startLoading(true);
 	};
@@ -57,14 +56,10 @@ class Search extends Component {
 											id="packageName"
 											value={this.state.value}
 											onChange={this.onChange}
+											placeholder="Search for an npm package"
 											loadOptions={this.getPackageNames}
 											labelKey="name"
 										/>
-										{/* <Input
-											placeholder="Search for an npm package"
-											id="packageName"
-											onChange={this.handleChange}
-										/> */}
 									</Control>
 								</Field>
 								<Button
