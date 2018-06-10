@@ -45,4 +45,4 @@ class HowTo extends Component {
 	}
 }
 
-module.exports = HowTo;
+export default HowTo;

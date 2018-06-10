@@ -37,10 +37,8 @@ class Package extends Component {
 		});
 
 		return (
-			<div isCentered>
-				<ul isCentered id="versions">
-					{packageVersions}
-				</ul>
+			<div>
+				<ul id="versions">{packageVersions}</ul>
 			</div>
 		);
 	}
@@ -54,13 +52,13 @@ class Package extends Component {
 						<Field isHorizontal>
 							<FieldBody>
 								<Control>
-									<Input placeholder="Search for a version" onChange={this.handleChange} />
+									<Input placeholder="Enter version number" onChange={this.handleChange} />
 								</Control>
 							</FieldBody>
 						</Field>
 					</Column>
 				</Columns>
-				<Columns isCentered isSize={12} className="versions-columns" isMultiline>
+				<Columns id="versionContainer" isCentered className="versions-columns" isMultiline>
 					{this.renderPackageVersions(versions)}
 				</Columns>
 			</Fragment>
