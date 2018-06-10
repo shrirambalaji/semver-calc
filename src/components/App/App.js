@@ -58,7 +58,7 @@ class App extends Component {
 						</Container>
 					</HeroBody>
 				</Hero>
-				<Container className="is-centered margin-top-100">
+				<Container className="is-centered margin-top-100 padding-10">
 					<Title isSize={6} hasTextAlign="centered">
 						New to semantic versioning? Learn the basics
 						<a href="https://docs.npmjs.com/getting-started/semantic-versioning" target="_blank">

@@ -37,7 +37,7 @@ class Package extends Component {
 		});
 
 		return (
-			<div isCentered>
+			<div>
 				<ul id="versions">{packageVersions}</ul>
 			</div>
 		);
@@ -58,7 +58,7 @@ class Package extends Component {
 						</Field>
 					</Column>
 				</Columns>
-				<Columns isCentered isSize={12} className="versions-columns" isMultiline>
+				<Columns isCentered className="versions-columns" isMultiline>
 					{this.renderPackageVersions(versions)}
 				</Columns>
 			</Fragment>
